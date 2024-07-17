@@ -12,9 +12,9 @@ const SideBar = () => (
         <img src={`${PUBLIC_URL}/images/me.jpg`} alt="" />
       </Link>
       <header>
-        <h2>Michael D&apos;Angelo</h2>
+        <h2>Benmain Loo</h2>
         <p>
-          <a href="mailto:michael@mldangelo.com">michael@mldangelo.com</a>
+          <a href="mailto:luhuimao@gmail.com">luhuimao@gmail.com</a>
         </p>
       </header>
     </section>
@@ -22,14 +22,10 @@ const SideBar = () => (
     <section className="blurb">
       <h2>About</h2>
       <p>
-        Hi, I&apos;m Michael. I am a{' '}
-        <a href="https://icme.stanford.edu/">Stanford ICME</a> graduate, YC
-        Alumni, and the VP of Engineering at{' '}
-        <a href="https://smileidentity.com">Smile Identity</a>. Previously, I
-        was the co-founder and CTO of <a href="https://arthena.com">Arthena</a>,
-        co-founder of <a href="https://matroid.com">Matroid</a>, and worked at{' '}
-        <a href="https://planet.com">Planet</a> and{' '}
-        <a href="https://facebook.com">Facebook</a>.
+        Hi, I&apos;m Benjamin. I am a{' '}
+        <a href="https://www.fudan.edu.cn/en/">FUDAN UNIVERSITY</a> graduate, web3 Full Stack
+        developer at{' '}
+        <a href="https://www.daosquare.fi/">DAO Square</a>, build a venture dao protocol from 0 to 1.
       </p>
       <ul className="actions">
         <li>
