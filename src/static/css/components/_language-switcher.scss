@@ -1,0 +1,72 @@
+///
+/// Language Switcher Component Styles
+///
+
+.language-switcher {
+    display: flex;
+    align-items: center;
+    height: inherit;
+    line-height: inherit;
+}
+
+.language-switcher-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    background: none;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+    font-family: _font(family-heading);
+    font-size: 0.7em;
+    font-weight: _font(weight-heading);
+    letter-spacing: _font(kerning-heading);
+    text-transform: uppercase;
+    padding: 0.5em 1em;
+    transition: color 0.2s ease;
+    height: 100%;
+    border-left: solid 1px _palette(border);
+
+    &:hover {
+        color: _palette(accent);
+    }
+
+    &:focus {
+        outline: none;
+        color: _palette(accent);
+    }
+
+    svg {
+        font-size: 1.2em;
+    }
+
+    .language-text {
+        white-space: nowrap;
+    }
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    height: inherit;
+    line-height: inherit;
+}
+
+@include breakpoint(medium) {
+    .language-switcher-button {
+        .language-text {
+            display: none;
+        }
+    }
+}
+
+@include breakpoint(small) {
+    .language-switcher {
+        margin-right: 0.5em;
+    }
+
+    .language-switcher-button {
+        padding: 0.5em;
+        font-size: 0.9em;
+    }
+}

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import VisitorCounter from '../../components/Stats/VisitorCounter';
 
 const Age = () => {
   const [age, setAge] = useState();
@@ -18,23 +19,51 @@ const Age = () => {
   return <>{age}</>;
 };
 
-const data = [
-  {
-    key: 'age',
-    label: 'Current age',
-    value: <Age />,
-  },
-  // {
-  //   key: 'countries',
-  //   label: 'Countries visited',
-  //   value: 53,
-  //   link: 'https://www.google.com/maps/d/embed?mid=1iBBTscqateQ93pWFVfHCUZXoDu8&z=2',
-  // },
-  {
-    key: 'location',
-    label: 'Current city',
-    value: 'ShangHai, CHINA',
-  },
-];
+const data = {
+  zh: [
+    {
+      key: 'age',
+      label: '当前年龄',
+      value: <Age />,
+    },
+    {
+      key: 'location',
+      label: '当前城市',
+      value: '中国，上海',
+    },
+    {
+      key: 'totalVisits',
+      label: '网站访问次数',
+      value: <VisitorCounter type="total" />,
+    },
+    {
+      key: 'firstVisit',
+      label: '首次访问时间',
+      value: <VisitorCounter type="firstVisit" />,
+    },
+  ],
+  en: [
+    {
+      key: 'age',
+      label: 'Current age',
+      value: <Age />,
+    },
+    {
+      key: 'location',
+      label: 'Current city',
+      value: 'ShangHai, CHINA',
+    },
+    {
+      key: 'totalVisits',
+      label: 'Total Visits',
+      value: <VisitorCounter type="total" />,
+    },
+    {
+      key: 'firstVisit',
+      label: 'First Visit',
+      value: <VisitorCounter type="firstVisit" />,
+    },
+  ],
+};
 
 export default data;

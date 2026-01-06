@@ -3,10 +3,24 @@ import PropTypes from 'prop-types';
 
 import CategoryButton from './Skills/CategoryButton';
 import SkillBar from './Skills/SkillBar';
+import { useLanguage } from '../../contexts/LanguageContext';
+import { categoryTranslations } from '../../data/resume/skills';
+import translations from '../../data/translations';
 
 const Skills = ({ skills, categories }) => {
+  const { language } = useLanguage();
+  const t = translations[language].pages.resume.skills || {};
+  const catTrans = categoryTranslations[language];
+
+  const translatedCategories = categories.map((cat) => ({
+    ...cat,
+    displayName: catTrans[cat.name] || cat.name,
+  }));
+
   const initialButtons = Object.fromEntries(
-    [['All', false]].concat(categories.map(({ name }) => [name, false])),
+    [[catTrans.All || 'All', false]].concat(
+      translatedCategories.map(({ displayName }) => [displayName, false]),
+    ),
   );
 
   const [buttons, setButtons] = useState(initialButtons);
@@ -21,7 +35,9 @@ const Skills = ({ skills, categories }) => {
       {},
     );
     // Turn on 'All' button if other buttons are off
-    newButtons.All = !Object.keys(buttons).some((key) => newButtons[key]);
+    newButtons[catTrans.All || 'All'] = !Object.keys(buttons).some(
+      (key) => newButtons[key],
+    );
     setButtons(newButtons);
   };
 
@@ -29,8 +45,14 @@ const Skills = ({ skills, categories }) => {
     // search for true active categories
     const actCat = Object.keys(buttons).reduce(
       (cat, key) => (buttons[key] ? key : cat),
-      'All',
+      catTrans.All || 'All',
     );
+
+    // Map back from display name to original category name
+    const originalCat = actCat === (catTrans.All || 'All')
+      ? 'All'
+      : translatedCategories.find((c) => c.displayName === actCat)?.name
+      || actCat;
 
     const comparator = (a, b) => {
       let ret = 0;
@@ -45,9 +67,16 @@ const Skills = ({ skills, categories }) => {
 
     return skills
       .sort(comparator)
-      .filter((skill) => actCat === 'All' || skill.category.includes(actCat))
+      .filter(
+        (skill) => originalCat === 'All' || skill.category.includes(originalCat),
+      )
       .map((skill) => (
-        <SkillBar categories={categories} data={skill} key={skill.title} />
+        <SkillBar
+          categories={translatedCategories}
+          data={skill}
+          key={skill.title}
+          categoryTranslations={catTrans}
+        />
       ));
   };
 
@@ -64,10 +93,10 @@ const Skills = ({ skills, categories }) => {
     <div className="skills">
       <div className="link-to" id="skills" />
       <div className="title">
-        <h3>Skills</h3>
+        <h3>{t.title || 'Skills'}</h3>
         <p>
-          Note: I think these sections are silly, but everyone seems to have
-          one. Here is a *mostly* honest overview of my skills.
+          {t.description
+            || 'Note: I think these sections are silly, but everyone seems to have one. Here is a *mostly* honest overview of my skills.'}
         </p>
       </div>
       <div className="skill-button-container">{getButtons()}</div>

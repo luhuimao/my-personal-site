@@ -12,7 +12,7 @@ const SideBar = () => (
         <img src={`${PUBLIC_URL}/images/me.jpg`} alt="" />
       </Link>
       <header>
-        <h2>Benmain Loo</h2>
+        <h2>Benmain</h2>
         <p>
           <a href="mailto:luhuimao@gmail.com">luhuimao@gmail.com</a>
         </p>
@@ -24,8 +24,7 @@ const SideBar = () => (
       <p>
         Hi, I&apos;m Benjamin. I am a{' '}
         <a href="https://www.fudan.edu.cn/en/">FUDAN UNIVERSITY</a> graduate, web3 Full Stack
-        developer at{' '}
-        <a href="https://www.daosquare.fi/">DAO Square</a>, build a venture dao protocol from 0 to 1.
+        developer, build a venture dao protocol from 0 to 1.
       </p>
       <ul className="actions">
         <li>

@@ -2,11 +2,15 @@ import React, { Suspense, lazy, useState } from 'react';
 
 import { Link } from 'react-router-dom';
 import routes from '../../data/routes';
+import { useLanguage } from '../../contexts/LanguageContext';
+import translations from '../../data/translations';
 
 const Menu = lazy(() => import('react-burger-menu/lib/menus/slide'));
 
 const Hamburger = () => {
   const [open, setOpen] = useState(false);
+  const { language } = useLanguage();
+  const t = translations[language];
 
   return (
     <div className="hamburger-container">
@@ -33,7 +37,7 @@ const Hamburger = () => {
             {routes.map((l) => (
               <li key={l.label}>
                 <Link to={l.path} onClick={() => setOpen(!open)}>
-                  <h3 className={l.index && 'index-li'}>{l.label}</h3>
+                  <h3 className={l.index && 'index-li'}>{t.nav[l.key] || l.label}</h3>
                 </Link>
               </li>
             ))}
