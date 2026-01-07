@@ -15,7 +15,7 @@ const data = {
     {
       title: 'Investment DAO 管理平台',
       subtitle: '已部署 Base 主网 | 工厂模式一键创建 DAO',
-      link: 'https://github.com/luhuimao/venture-dao',
+      link: 'https://github.com/luhuimao/venture-dao-diamond',
       image: '/images/projects/investment-dao.jpg',
       date: '2023-06-01',
       desc:
@@ -70,7 +70,7 @@ const data = {
     {
       title: 'Investment DAO Platform',
       subtitle: 'Deployed on Base Mainnet | One-Click DAO Creation via Factory Pattern',
-      link: 'https://github.com/luhuimao/venture-dao',
+      link: 'https://github.com/luhuimao/venture-dao-diamond',
       image: '/images/projects/investment-dao.jpg',
       date: '2023-06-01',
       desc:
