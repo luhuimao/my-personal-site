@@ -129,7 +129,7 @@ const translations = {
         },
         skills: {
           title: 'Skills',
-          description: "Note: I think these sections are silly, but everyone seems to have one. Here is a *mostly* honest overview of my skills.",
+          description: 'Note: I think these sections are silly, but everyone seems to have one. Here is a *mostly* honest overview of my skills.',
         },
       },
       projects: {

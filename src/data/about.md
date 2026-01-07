@@ -10,7 +10,7 @@ I'm a **Smart Contract Engineer** with **7 years of full-stack blockchain develo
 ## Professional Experience
 
 ### 💼 Director of Smart Contract Development
-**Web3 Investment Platform** | Jan 2021 - Jul 2024
+**Web3 Investment Platform** | Jan 2021 - Jul 2025
 
 Led smart contract architecture design, development, and security auditing for Web3 investment and treasury management platform, guiding the team through 0-to-1 product delivery.
 

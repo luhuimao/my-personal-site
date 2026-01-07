@@ -36,7 +36,7 @@ const data = {
     {
       title: '高性能交易撮合引擎',
       subtitle: 'Go + gRPC | 10,000+ TPS | P99 延迟 < 50ms',
-      link: 'https://github.com/luhuimao/matching-engine',
+      link: 'https://github.com/luhuimao/orderbook-matching-engine',
       image: '/images/projects/matching-engine.jpg',
       date: '2022-03-01',
       desc:
@@ -91,7 +91,7 @@ const data = {
     {
       title: 'High-Performance Trading Matching Engine',
       subtitle: 'Go + gRPC | 10,000+ TPS | P99 Latency < 50ms',
-      link: 'https://github.com/luhuimao/matching-engine',
+      link: 'https://github.com/luhuimao/orderbook-matching-engine',
       image: '/images/projects/matching-engine.jpg',
       date: '2022-03-01',
       desc:
